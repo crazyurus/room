@@ -6,10 +6,10 @@
         <p class="course-title">授课时间</p>
         <p class="course-content">{{timeStr}}</p>
         <p class="course-divide">&nbsp;</p>
-        <p class="course-title">建议反馈</p>
-        <p class="course-content">Token团队</p>
+        <p class="course-title">学分</p>
+        <p class="course-content">{{course.point}}学分</p>
         <p class="course-divide">&nbsp;</p>
-        <p v-if="course.id > 0"><a href="javascript: f7.popup('.popup-course'); document.querySelector('.layui-m-layer').remove();">编辑自定义课程</a></p>
+        <p><a href="javascript: document.querySelector('.layui-m-layer').remove(); f7.alert('该功能正在开发中，敬请期待～')">添加到我的课程表</a></p>
         <p class="course-footer">{{course.classroom}}</p>
     </div>
 </template>

@@ -201,8 +201,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .table-item:not(.table-item-null) {
     cursor: pointer;
   }
+
   .table-item-1 {
     background-color: rgb(69,200,220);
   }

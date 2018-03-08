@@ -7,12 +7,12 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.ios.colors.min
 
 import 'vue-layer-mobile/need/layer.css'
 import './css/app.css'
+import Routes from './routes.js'
 import './css/layer.css'
 import App from './app'
 
 import axios from 'axios'
 import layer from 'vue-layer-mobile'
-import store from './store/course'
 
 Vue.use(Framework7Vue)
 Vue.use(layer)
@@ -23,11 +23,12 @@ new Vue({
   el: '#app',
   framework7: {
     root: '#app',
+    routes: Routes,
     pushState: true,
-    modalTitle: '课程表',
+    pushStateSeparator: '#',
+    modalTitle: '自习室',
     modalButtonOk: '确定',
     modalButtonCancel: '取消'
   },
-  store,
   render: h => h(App)
 });

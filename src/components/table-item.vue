@@ -1,5 +1,5 @@
 <template>
-    <div v-if="course.length === 0" class="table-item table-item-null" @click="addCourse"></div>
+    <div v-if="course.length === 0" class="table-item table-item-null"></div>
     <div v-else class="table-item" :class="'table-item-' + color" @click="showCourseList">
         <div>{{course[0].name}}</div>
         <div v-if="course[0].classroom">{{course[0].classroom}}</div>
@@ -9,7 +9,6 @@
 <script>
   import Vue from 'vue'
   import Detail from './table-course'
-  import Course from '../course.js'
 
   export default {
     name: 'token-table-item',
@@ -21,14 +20,6 @@
       }
     },
     methods: {
-      addCourse() {
-        let course = new Course();
-        course.period.week = this.week + 1;
-        course.period.section = this.no + 1;
-
-        this.$store.commit('current', course);
-        this.$f7.popup('.popup-course');
-      },
       showCourseList() {
         const self = this;
 
@@ -63,14 +54,7 @@
           }
         });
 
-        // 监听返回键
-        location.href = '#detail';
-        window.onhashchange = () => {
-          if (location.hash === '') this.$layer.close();
-        };
-
         // 打开弹窗
-        this.$store.commit('current', course.origin);
         this.$layer.open({
           title: course.name,
           anim: 'scale',  // vue-layer-mobile并没有实现这个默认是up，通过修改css fixed
