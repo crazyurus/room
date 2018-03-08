@@ -25,7 +25,7 @@
 							<div class="item-desc">查看某门课程的所有安排</div>
 							<div class="item-button">查看</div>
 						</f7-link>
-						<f7-link class="item external" style="background: linear-gradient(45deg, rgb(90,192,198), rgb(157,226,219));" href="/table">
+						<f7-link v-if="$sno !== '(null)'" class="item external" style="background: linear-gradient(45deg, rgb(90,192,198), rgb(157,226,219));" href="/table">
 							<div class="item-title">个人课表</div>
 							<div class="item-desc">查看自己的课程表</div>
 							<div class="item-button">查看</div>

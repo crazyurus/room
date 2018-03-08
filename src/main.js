@@ -17,6 +17,7 @@ import layer from 'vue-layer-mobile'
 Vue.use(Framework7Vue)
 Vue.use(layer)
 Vue.prototype.$http = axios
+Vue.prototype.$sno = window.sno
 if (process.env.NODE_ENV !== 'production') require('../mock.js')
 
 new Vue({

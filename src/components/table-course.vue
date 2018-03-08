@@ -9,7 +9,7 @@
         <p class="course-title">学分</p>
         <p class="course-content">{{course.point}}学分</p>
         <p class="course-divide">&nbsp;</p>
-        <p><a href="javascript: document.querySelector('.layui-m-layer').remove(); f7.alert('该功能正在开发中，敬请期待～')">添加到我的课程表</a></p>
+        <p v-if="$sno !== '(null)'"><a :href="'javascript:addCourse(' + JSON.stringify(course) + ')'">添加到我的课程表</a></p>
         <p class="course-footer">{{course.classroom}}</p>
     </div>
 </template>

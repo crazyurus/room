@@ -9,5 +9,23 @@
 </head>
 <body>
   <div id="app"></div>
+  <script>
+    window.sno = '{$Think.session.sno}';
+
+		function addCourse(course) {
+			f7.showIndicator();
+			var xhr = new XMLHttpRequest();
+			xhr.open('post', '/table/course/add', true);
+			xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+			xhr.send( JSON.stringify({ course: course }));
+			xhr.onreadystatechange = function () {
+				if (xhr.status === 200 && xhr.readyState === 4) {
+					f7.hideIndicator();
+					document.querySelector('.layui-m-layer').remove();
+					f7.alert('已将 <b>' + course.name + '</b> 添加到你的个人课表中');
+				}
+			};
+		}
+  </script>
 </body>
 </html>
