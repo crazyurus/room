@@ -3,7 +3,7 @@
 		<f7-block-title>请输入课程名称</f7-block-title>
 		<f7-list>
 			<f7-list-item>
-				<f7-input type="search" placeholder="课程名称" v-model.trim="name" @change="search" />
+				<f7-input type="search" placeholder="课程名称" v-model.trim.lazy="name" @change="search" />
 			</f7-list-item>
 		</f7-list>
 		<f7-list v-if="course.length > 0">
