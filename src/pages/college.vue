@@ -26,6 +26,7 @@
 			<f7-list-item link="/college/A22" title="国际教育学院"></f7-list-item>
 			<f7-list-item link="/college/A23" title="创业学院"></f7-list-item>
 			<f7-list-item link="/college/A24" title="体育部"></f7-list-item>
+			<f7-list-item link="/college/D06" title="教育科学研究院"></f7-list-item>
 		</f7-list>
 	</f7-page>
 </template>
