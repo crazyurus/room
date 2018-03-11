@@ -40,6 +40,7 @@ window.addCourse = function (course) {
   f7.confirm(`是否将 <b>${course.name}</b> 添加到你的个人课表中？`, () => {
     f7.showIndicator();
     $modal.remove();
+    document.querySelector('.view-main').style.filter = '';
     axios.post('/table/course/add', { course }).then(() => {
       f7.hideIndicator();
       let message = '已将该课程添加到你的个人课表中';
