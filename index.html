@@ -11,29 +11,6 @@
   <div id="app"></div>
   <script>
     window.sno = '{$Think.session.sno}';
-
-		function addCourse(course) {
-      var $modal = document.querySelector('.layui-m-layer');
-      $modal.style.display = 'none';
-		  f7.confirm('是否将 <b>' + course.name + '</b> 添加到你的个人课表中？', function () {
-        f7.showIndicator();
-        $modal.remove();
-        var xhr = new XMLHttpRequest();
-        xhr.open('post', '/table/course/add', true);
-        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-        xhr.send( JSON.stringify({ course: course }));
-        xhr.onreadystatechange = function () {
-          if (xhr.status === 200 && xhr.readyState === 4) {
-            f7.hideIndicator();
-            var message = '已将该课程添加到你的个人课表中';
-            if (typeof token !== 'undefined' && token.showNativeToast) token.showNativeToast(message, true);
-            else f7.alert(message);
-          }
-        };
-      }, function () {
-        $modal.style.display = 'block';
-      });
-		}
   </script>
 </body>
 </html>

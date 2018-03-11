@@ -33,3 +33,22 @@ new Vue({
   },
   render: h => h(App)
 });
+
+window.addCourse = function (course) {
+  let $modal = document.querySelector('.layui-m-layer');
+  $modal.style.display = 'none';
+  f7.confirm(`是否将 <b>${course.name}</b> 添加到你的个人课表中？`, () => {
+    f7.showIndicator();
+    $modal.remove();
+    axios.post('/table/course/add', { course }).then(() => {
+      f7.hideIndicator();
+      let message = '已将该课程添加到你的个人课表中';
+      if (typeof token !== 'undefined' && token.showNativeToast) token.showNativeToast(message, true);
+      else f7.alert(message);
+    }).catch(() => {
+      f7.alert('网络请求错误');
+    });
+  }, () => {
+    $modal.style.display = 'block';
+  });
+}
