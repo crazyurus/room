@@ -1,6 +1,6 @@
 <template>
     <div v-if="course.length === 0" class="table-item table-item-null"></div>
-    <div v-else class="table-item" :class="'table-item-' + color" @click="showCourseList">
+    <div v-else class="table-item" :class="'table-item-' + color + (course.length > 1 ? ' table-item-multi' : '')" @click="showCourseList">
         <div>{{course[0].name}}</div>
         <div v-if="course[0].classroom">{{course[0].classroom}}</div>
     </div>
@@ -26,7 +26,7 @@
         if (this.course.length === 1) this.showCourseDetail(this.course[0]);
         else {
           let buttons = [{
-            text: '该节次对应多门课程',
+            text: '该节次对应' + this.course.length + '门课程',
             label: true
           }];
           let courses = this.course.map(item => {

@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%;">
+  <div class="table">
     <div class="table-time">
       <div class="table-time-blank">
         <select v-model="current" title="切换周数">
@@ -116,6 +116,9 @@
 </script>
 
 <style scoped>
+  .table {
+    height: 100%;
+  }
   .table-course {
     position: absolute;
     top: 0;
@@ -201,8 +204,22 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
   }
-
+  .table-item-multi::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 0.3rem solid transparent;
+    border-right-color: rgb(242, 244, 244);
+    border-bottom-color: rgb(242, 244, 244);
+    background-color: rgba(242,244,244,0.6);
+    border-bottom-right-radius: 0.25rem;
+    border-top-left-radius: 0.15rem;
+  }
   .table-item:not(.table-item-null) {
     cursor: pointer;
   }
