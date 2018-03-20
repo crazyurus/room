@@ -56,7 +56,7 @@
 
         // 打开弹窗
         let $main = document.querySelector('.view-main');
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', e => {
           if (e.target.className === 'layui-m-layershade active-state') $main.style.filter = '';
         }, true);
         $main.style.filter = 'blur(4px)';
