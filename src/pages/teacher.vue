@@ -7,7 +7,7 @@
 			</f7-list-item>
 		</f7-list>
 		<f7-list v-if="teacher.length > 0">
-			<f7-list-item :link="'/detail/JSGH/' + item.ID_NUMBER + '/' + item.USER_NAME" :title="item.USER_NAME" :after="item.UNIT_NAME" v-for="item in teacher" :key="item.ID_NUMBER"></f7-list-item>
+			<f7-list-item :link="'/detail/JSGH/' + item.ID_NUMBER + '/' + item.USER_NAME" :title="item.USER_NAME" :after="item.UNIT_NAME.split('（材')[0]" v-for="item in teacher" :key="item.ID_NUMBER"></f7-list-item>
 		</f7-list>
 	</f7-page>
 </template>
