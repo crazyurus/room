@@ -25,11 +25,13 @@
 							<div class="item-desc">查看某门课程的所有安排</div>
 							<div class="item-button">查看</div>
 						</f7-link>
-						<f7-link v-if="$sno !== '(null)'" class="item external" style="background: linear-gradient(45deg, rgb(90,192,198), rgb(157,226,219));" href="/table">
+						<div v-if="$sno !== '(null)'" class="item" style="background: linear-gradient(45deg, rgb(90,192,198), rgb(157,226,219));">
+							<f7-input class="item-switch" type="switch" checked></f7-input>
 							<div class="item-title">个人课表</div>
 							<div class="item-desc">查看自己的课程表</div>
-							<div class="item-button">查看</div>
-						</f7-link>
+							<div class="item-button" @click="onTable">查看</div>
+							<div class="item-button" style="margin-right: 10px;" @click="onShare">分享</div>
+						</div>
 					</f7-page>
 				</f7-pages>
 			</f7-view>
@@ -38,7 +40,44 @@
 </template>
 
 <script>
-  export default {}
+  import { Base64 } from 'js-base64'
+
+  export default {
+    methods: {
+      onShare() {
+        const route = '/detail/share/' + Base64.encode(window.sno) + '/' + window.userName + '的课表';
+        const url = 'https://web.wutnews.net/room?r=' + encodeURIComponent(route);
+        const scheme = '://share/to_fri?src_type=web&version=1&file_type=news&share_id=1103437993&title=' + Base64.encode(window.userName + '的个人课表') + '&thirdAppDisplayName=5o6M5LiK55CG5bel5aSn&url=' + Base64.encode(url) + '&description=' + Base64.encode('这是我分享的个人课表，快来看看我有哪些课吧～');
+				this.$f7.modal({
+					title: '课表分享',
+					text: '课表分享链接已生成！快分享给同学或者好友吧～（自定义课程是不会被分享的哦）',
+					verticalButtons: true,
+					buttons: [{
+					  text: '分享给QQ好友',
+						bold: true,
+						onClick() {
+							location.assign('mqqapi' + scheme);
+						}
+					}, {
+            text: '分享给TIM好友',
+            onClick() {
+              location.assign('tim' + scheme);
+            }
+          }, {
+            text: '查看我的课表分享',
+            onClick() {
+              f7.mainView.router.loadPage(route);
+            }
+          }, {
+					  text: '暂不分享'
+					}]
+				});
+			},
+      onTable() {
+        location.assign('/table');
+			}
+		}
+	}
 </script>
 
 <style scoped>
@@ -76,5 +115,9 @@
 		float: right;
 		text-align: center;
 		line-height: 28px;
+	}
+
+	.item-switch {
+		float: right;
 	}
 </style>
