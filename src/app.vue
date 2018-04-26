@@ -61,7 +61,7 @@
 					}, {
             text: '分享给TIM好友',
             onClick() {
-              location.assign('tim' + scheme);
+              location.assign('timapi' + scheme);
             }
           }, {
             text: '查看我的课表分享',
