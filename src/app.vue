@@ -53,17 +53,12 @@
 					text: '课表分享链接已生成！快分享给同学或者好友吧～（自定义课程是不会被分享的哦）',
 					verticalButtons: true,
 					buttons: [{
-					  text: '分享给QQ好友',
+					  text: '分享给QQ/TIM好友',
 						bold: true,
 						onClick() {
 							location.assign('mqqapi' + scheme);
 						}
 					}, {
-            text: '分享给TIM好友',
-            onClick() {
-              location.assign('timapi' + scheme);
-            }
-          }, {
             text: '查看我的课表分享',
             onClick() {
               f7.mainView.router.loadPage(route);
