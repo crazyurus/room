@@ -45,8 +45,8 @@
   export default {
     methods: {
       onShare() {
-        const route = '/detail/share/' + Base64.encode(window.sno) + '/' + window.userName + '的课表';
-        const url = 'https://web.wutnews.net/room?r=' + encodeURIComponent(route);
+        const route = '/detail/share/' + Base64.encode(window.sno) + '/' + encodeURIComponent(window.userName + '的课表');
+        const url = 'https://web.wutnews.net/room' + route;
 				this.$f7.modal({
 					title: '课表分享',
 					text: '课表分享链接已生成！快分享给同学或者好友吧～（自定义课程是不会被分享的哦）',
