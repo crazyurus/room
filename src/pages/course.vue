@@ -7,7 +7,7 @@
 			</f7-list-item>
 		</f7-list>
 		<f7-list v-if="course.length > 0">
-			<f7-list-item :link="'/detail/KCH/' + item.KCH + '/' + item.KCMC" :title="item.KCMC" :after="item.XF + '学分'" v-for="item in course" :key="item.KCH"></f7-list-item>
+			<f7-list-item :link="'/detail/KCH/' + item.kch + '/' + item.name" :title="item.name" :after="item.point" v-for="item in course" :key="item.name"></f7-list-item>
 		</f7-list>
 	</f7-page>
 </template>
@@ -30,9 +30,22 @@
           }
         }).then(response => {
           this.$f7.hideIndicator();
-          this.course = response.data.data;
+          let course = [];
+          for (let name in response.data.data) {
+            let arr = response.data.data[name];
+            course.push({
+              name,
+              kch: arr.map(course => course.KCH).unique().join('-'),
+              point: arr.map(course => course.XF).unique().sort().join('/') + '学分'
+            });
+          }
+          this.course = course;
         });
       }
-    }
+		}
+  }
+
+  Array.prototype.unique = function () {
+    return Array.from(new Set(this));
   }
 </script>
