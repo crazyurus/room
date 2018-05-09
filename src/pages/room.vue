@@ -20,7 +20,7 @@
       this.$f7.showIndicator();
       this.$http.get('/table/room/lists', {
         params: {
-          building: this.name
+          building: decodeURIComponent(this.name)
         }
 			}).then(response => {
         this.$f7.hideIndicator();

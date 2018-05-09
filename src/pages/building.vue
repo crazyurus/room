@@ -17,8 +17,9 @@
 			}
 		},
 		mounted() {
+      const name = decodeURIComponent(this.name);
       const data = require('../../mock/building');
-      this.building = data[this.name];
+      this.building = data[name];
 		}
   }
 </script>

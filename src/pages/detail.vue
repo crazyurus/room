@@ -14,7 +14,10 @@
       props: ['type', 'value', 'title'],
       data() {
         return {
-          table: {}
+          table: {
+            week: 0,
+            course: []
+          }
         }
       },
       mounted() {
@@ -22,7 +25,7 @@
         this.$http.get('/table/index/room', {
           params: {
             type: this.type,
-            value: this.value
+            value: decodeURIComponent(this.value)
           }
         }).then(response => {
           this.$f7.hideIndicator();

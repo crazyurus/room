@@ -26,7 +26,8 @@ new Vue({
     root: '#app',
     routes: Routes,
     pushState: true,
-    pushStateSeparator: '#',
+    pushStateSeparator: '',
+    pushStateRoot: '/room',
     modalTitle: '自习室',
     modalButtonOk: '确定',
     modalButtonCancel: '取消'

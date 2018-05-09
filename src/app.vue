@@ -47,7 +47,6 @@
       onShare() {
         const route = '/detail/share/' + Base64.encode(window.sno) + '/' + window.userName + '的课表';
         const url = 'https://web.wutnews.net/room?r=' + encodeURIComponent(route);
-        const scheme = '://share/to_fri?src_type=web&version=1&file_type=news&share_id=1103437993&title=' + Base64.encode(window.userName + '的个人课表') + '&thirdAppDisplayName=5o6M5LiK55CG5bel5aSn&url=' + Base64.encode(url) + '&description=' + Base64.encode('这是我分享的个人课表，快来看看我有哪些课吧～');
 				this.$f7.modal({
 					title: '课表分享',
 					text: '课表分享链接已生成！快分享给同学或者好友吧～（自定义课程是不会被分享的哦）',
@@ -56,7 +55,7 @@
 					  text: '分享给QQ/TIM好友',
 						bold: true,
 						onClick() {
-							location.assign('mqqapi' + scheme);
+							location.assign('mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_id=1103437993&title=' + Base64.encode(window.userName + '的个人课表') + '&thirdAppDisplayName=5o6M5LiK55CG5bel5aSn&url=' + Base64.encode(url) + '&description=' + Base64.encode('这是我分享的个人课表，快来看看我有哪些课吧～'));
 						}
 					}, {
             text: '查看我的课表分享',
