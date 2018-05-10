@@ -2,7 +2,7 @@
 	<f7-page>
 		<f7-block-title>请选择教室（容量：人）</f7-block-title>
 		<f7-list>
-			<f7-list-item :link="'/detail/JXDD/' + item.JSH + '/' + item.JSH" :title="item.JSH" :after="item.ZWS" v-for="item in room" :key="item.JSH"></f7-list-item>
+			<f7-list-item :link="'/detail/JXDD/' + item.JSH + '/' + item.JSMC" :title="item.JSMC" :after="item.ZWS|empty" v-for="item in room" :key="item.JSH"></f7-list-item>
 		</f7-list>
 	</f7-page>
 </template>
@@ -23,9 +23,17 @@
           building: decodeURIComponent(this.name)
         }
 			}).then(response => {
+			  const reg = /[^0-9]/g;
         this.$f7.hideIndicator();
-        this.room = response.data.data;
+        this.room = response.data.data.sort((a, b) => {
+          return a.JSMC.replace(reg, '') - b.JSMC.replace(reg, '');
+				});
       });
-    }
+    },
+		filters: {
+      empty(value) {
+        return value ? value : '无';
+      }
+		}
   }
 </script>
