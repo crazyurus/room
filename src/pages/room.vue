@@ -2,7 +2,7 @@
 	<f7-page>
 		<f7-block-title>请选择教室（容量：人）</f7-block-title>
 		<f7-list>
-			<f7-list-item :link="'/detail/JXDD/' + item.JSH + '/' + item.JSMC" :title="item.JSMC" :after="item.ZWS|empty" v-for="item in room" :key="item.JSH"></f7-list-item>
+			<f7-list-item :link="'/detail/' + (item.ZWS ? 'JXDD' : 'JXBH') + '/' + item.JSH + '/' + item.JSMC" :title="item.JSMC" :after="item.ZWS|empty" v-for="item in room" :key="item.JSH"></f7-list-item>
 		</f7-list>
 	</f7-page>
 </template>
@@ -32,7 +32,7 @@
     },
 		filters: {
       empty(value) {
-        return value ? value : '无';
+        return value ? value : '';
       }
 		}
   }
