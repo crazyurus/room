@@ -11,7 +11,7 @@
   <div id="app"></div>
   <script>
     window.sno = "<?php echo isset($_SESSION['sno']) ? $_SESSION['sno'] : '(null)'; ?>";
-    window.userName = '{$Think.session.tl_user.name|urldecode}';
+    window.userName = '{$Think.session.tl_user.name}';
   </script>
 </body>
 </html>
