@@ -15,7 +15,7 @@
 							<div class="item-desc">查看班级的排课信息</div>
 							<div class="item-button">查看</div>
 						</f7-link>
-						<f7-link class="item" style="background: linear-gradient(45deg, rgb(54,48,105), rgb(73,88,163));" href="/teacher">
+						<f7-link v-if="$sno !== '(null)'" class="item" style="background: linear-gradient(45deg, rgb(54,48,105), rgb(73,88,163));" href="/teacher">
 							<div class="item-title">教师课表</div>
 							<div class="item-desc">查看教师的任课安排</div>
 							<div class="item-button">查看</div>

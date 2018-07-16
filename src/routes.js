@@ -7,6 +7,7 @@ import MajorPage from './pages/major'
 import BJPage from './pages/bj'
 import TeacherPage from './pages/teacher'
 import CoursePage from './pages/course'
+import ContactPage from './pages/contact'
 
 export default [
   {
@@ -40,6 +41,10 @@ export default [
   {
     path: '/teacher',
     component: TeacherPage
+  },
+  {
+    path: '/teacher/:sno',
+    component: ContactPage
   },
   {
     path: '/course',
