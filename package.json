@@ -1,32 +1,23 @@
 {
   "name": "room",
-  "version": "1.0.0",
-  "description": "Room Table by Framework7 Vue + Webpack",
+  "version": "2.0.0",
+  "description": "掌上理工大自习室模块",
+  "repository": "https://github.com/crazyurus/room.git",
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
     "build": "node build/build.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://git.wutnews.net/crazyurus/room.git"
-  },
   "keywords": [
-    "ios",
     "webpack",
     "framework7",
     "vue",
-    "vuejs",
-    "material",
-    "mobile",
-    "app",
-    "f7"
+    "vuex"
   ],
-  "author": "Crazy Urus",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://git.wutnews.net/crazyurus/room/issues"
+  "author": {
+    "name": "Crazy Urus",
+    "email": "crazyurus@vip.qq.com"
   },
-  "homepage": "https://web.wutnews.net/room",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.17.1",
     "framework7": "^1.0.0",

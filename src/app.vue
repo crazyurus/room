@@ -70,7 +70,7 @@
 				});
 			},
       onTable() {
-        location.assign('/table');
+        location.assign('https://whut-table.netlify.app');
 			}
 		}
 	}

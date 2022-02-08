@@ -1,0 +1,11 @@
+{
+  "errCode": 0,
+  "errMsg": "OK",
+  "data": {
+    "name": "Crazy Urus",
+    "college": "计算机科学与技术学院",
+    "sex": 1,
+    "mobile": "13333333333",
+    "email": "crazyurus@vip.qq.com"
+  }
+}

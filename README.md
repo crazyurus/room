@@ -1,17 +1,18 @@
 # 自习室
 
-Vue + Vuex + Framework7 + Webpack 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b1a8c217-d2ad-4ddd-89ba-d19a41d79ebd/deploy-status)](https://app.netlify.com/sites/whut-room/deploys)
+
+掌上理工大自习室模块
+
+`Vue` + `Vuex` + `Framework7`
 
 ## 安装
 
 ``` bash
-# install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+npm run start
 
-# build for production with minification
 npm run build
 ```
 

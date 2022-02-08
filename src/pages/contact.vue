@@ -2,7 +2,7 @@
   <f7-page>
     <header>
       <div class="head-blank"></div>
-      <img class="head-avatar" :src="teacher.avatar" onerror="this.src='//static.wutnews.net/avatar/default.jpg';">
+      <img class="head-avatar" src="https://avatars.githubusercontent.com/u/2209055">
       <div class="head-user">
         <div class="user-name">
           <span>{{teacher.name}}</span>

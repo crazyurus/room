@@ -1,3 +1,4 @@
+import './mock'
 import Vue from 'vue'
 
 import Framework7 from 'framework7'
@@ -14,11 +15,18 @@ import App from './app'
 import axios from 'axios'
 import layer from 'vue-layer-mobile'
 
+axios.interceptors.request.use(config => {
+  if (config.method.toUpperCase() === 'GET') {
+    delete config.params
+  }
+
+  return config
+})
+
 Vue.use(Framework7Vue)
 Vue.use(layer)
 Vue.prototype.$http = axios
 Vue.prototype.$sno = window.sno
-if (process.env.NODE_ENV !== 'production') require('../mock.js')
 
 new Vue({
   el: '#app',
