@@ -10,7 +10,7 @@ import 'vue-layer-mobile/need/layer.css'
 import './css/app.css'
 import Routes from './routes.js'
 import './css/layer.css'
-import App from './app'
+import App from './app.vue'
 
 import axios from 'axios'
 import layer from 'vue-layer-mobile'

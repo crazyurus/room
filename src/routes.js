@@ -1,13 +1,13 @@
-import AreaPage from './pages/area'
-import BuildingPage from './pages/building'
-import RoomPage from './pages/room'
-import DetailPage from './pages/detail'
-import CollegePage from './pages/college'
-import MajorPage from './pages/major'
-import BJPage from './pages/bj'
-import TeacherPage from './pages/teacher'
-import CoursePage from './pages/course'
-import ContactPage from './pages/contact'
+import AreaPage from './pages/area.vue'
+import BuildingPage from './pages/building.vue'
+import RoomPage from './pages/room.vue'
+import DetailPage from './pages/detail.vue'
+import CollegePage from './pages/college.vue'
+import MajorPage from './pages/major.vue'
+import BJPage from './pages/bj.vue'
+import TeacherPage from './pages/teacher.vue'
+import CoursePage from './pages/course.vue'
+import ContactPage from './pages/contact.vue'
 
 export default [
   {

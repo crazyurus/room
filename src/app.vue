@@ -40,12 +40,10 @@
 </template>
 
 <script>
-  import { Base64 } from 'js-base64'
-
   export default {
     methods: {
       onShare() {
-        const route = '/detail/share/' + Base64.encode(window.sno) + '/' + encodeURIComponent(window.userName + '的课表');
+        const route = '/detail/share/' + btoa(window.sno) + '/' + encodeURIComponent(window.userName + '的课表');
         const url = 'https://web.wutnews.net/room' + route;
 				this.$f7.modal({
 					title: '课表分享',
@@ -57,7 +55,7 @@
 						onClick() {
 					    const title = window.userName + '的个人课表';
 							if (window.token && token.invokeShare) token.invokeShare(title, url, 0);
-							else location.assign('mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_id=1103437993&title=' + Base64.encode(title) + '&thirdAppDisplayName=5o6M5LiK55CG5bel5aSn&url=' + Base64.encode(url) + '&description=' + Base64.encode('这是我分享的个人课表，快来看看我有哪些课吧～'));
+							else location.assign('mqqapi://share/to_fri?src_type=web&version=1&file_type=news&share_id=1103437993&title=' + btoa(title) + '&thirdAppDisplayName=5o6M5LiK55CG5bel5aSn&url=' + btoa(url) + '&description=' + btoa('这是我分享的个人课表，快来看看我有哪些课吧～'));
 						}
 					}, {
             text: '查看我的课表分享',

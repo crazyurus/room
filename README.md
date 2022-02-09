@@ -4,7 +4,7 @@
 
 掌上理工大自习室模块
 
-`Vue` + `Vuex` + `Framework7`
+`Vue` + `Framework7` + `Vite`
 
 ## 安装
 

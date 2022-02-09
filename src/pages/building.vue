@@ -8,6 +8,8 @@
 </template>
 
 <script>
+  import buildingData from '../../mock/building.json'
+
   export default {
     name: 'token-building',
 		props: ['name'],
@@ -18,8 +20,7 @@
 		},
 		mounted() {
       const name = decodeURIComponent(this.name);
-      const data = require('../../mock/building');
-      this.building = data[name];
+      this.building = buildingData[name];
 		}
   }
 </script>
